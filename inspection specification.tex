@@ -1,0 +1,49 @@
+﻿\documentclass{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\title{A班 仕様検討書 \\
+	Xamarinを用いたマルチプラットフォーム対応の多機能カレンダーの作成}
+
+\author{秋元淳矢、天笠智哉}
+\date{}
+\begin{document}
+
+	\section{概要}
+    	カレンダーを用いたアプリケーションを使う機会が多いが、それを使い分けていることから、一つのアプリケーションに集約できないかと考えた。
+        そこで、マルチプラットフォーム対応の多機能カレンダーを作成することにした。
+	\section{検討案}
+    	多機能カレンダーを作成するに当たって以下のような機能を実装することを検討した。
+        \begin{description}
+        	\item[第一案] 家計簿:月ごとの統計、残高表示など \label{plan1}
+            \item[第二案] ToDo機能：やりたいことリストの表示 \label{plan2}
+            \item[第三案] ウィッシュリスト:ほしいものリストの表示 \label{plan3}
+        	\item[第四案] 日記 \label{plan4}
+       		\item[第五案] 学習計画表:学習予定とその達成度 \label{plan5}
+       		\item[第六案] OCRによる文字読み込み機能: 領収書 \label{plan6}
+       \end{description}
+       
+       この案の中から第一案、第二案、第三案は関連性があり、相互運用ができるので採用した。
+       理由として、第一案の家計簿は、製作者がカレンダーを使用する際に、家計簿の使用頻度が高いからである。
+       第二案のToDo機能と第三案のウィッシュリストはUIが似ているため、実装が容易であるからである。
+       
+       また、第四案、第五案、第六案を不採用とした理由は、
+       第四案の日記は、データベースの仕様上、文字数に制限がかかるため、文字を多用する日記は不適切であると判断した。
+       第五案の学習計画表は、時間との兼ね合いで見送った。
+       第六案のOCRによる文字読み込み機能は、実装時間がかかるため見送った。
+       
+	\section{開発環境・言語・フレームワーク・ライブラリ}
+    	\begin{description}
+        	\item[統合開発環境] Visual Studio
+            \item[フレームワーク] Xamarin
+            \item[使用言語]	C\#,PHP,SQL,XAML
+            \item[ライブラリ]
+            	\begin{itemize}
+                	\item PCLStorage
+                    \item SQLite.Net
+                    \item Json.Net
+                    \item OxyPlot
+                \end{itemize}
+        \end{description}
+        
+       	製作者の両方が、C\#に慣れているため使用言語としてC#を選んだ。
+        
+\end{document}
