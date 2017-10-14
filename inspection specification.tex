@@ -3,7 +3,7 @@
 \title{A班 仕様検討書 \\
 	Xamarinを用いたマルチプラットフォーム対応の多機能カレンダーの作成}
 
-\author{秋元淳矢、天笠智哉}
+\author{秋元淳矢、天笠智哉、小林広人}
 \date{}
 \begin{document}
 
@@ -18,7 +18,7 @@
             \item[第三案] ウィッシュリスト:ほしいものリストの表示 \label{plan3}
         	\item[第四案] 日記 \label{plan4}
        		\item[第五案] 学習計画表:学習予定とその達成度 \label{plan5}
-       		\item[第六案] OCRによる文字読み込み機能: 領収書 \label{plan6}
+       		\item[第六案] OCRによる文字読み込み機能: 領収書など \label{plan6}
        \end{description}
        
        この案の中から第一案、第二案、第三案は関連性があり、相互運用ができるので採用した。
@@ -35,15 +35,24 @@
         	\item[統合開発環境] Visual Studio
             \item[フレームワーク] Xamarin
             \item[使用言語]	C\#,PHP,SQL,XAML
-            \item[ライブラリ]
+            \item[ライブラリ] \\
             	\begin{itemize}
                 	\item PCLStorage
-                    \item SQLite.Net
+                    \item Akavache
                     \item Json.Net
                     \item OxyPlot
                 \end{itemize}
         \end{description}
         
-       	製作者の両方が、C\#に慣れているため使用言語としてC#を選んだ。
+       	マルチプラットフォームを実現するにあたって、各プラットフォームのUIなどを共通のコードで作成することができれば、工数を大幅に削減できると考えた。
+        そこでこれを実現できるフレームワークとしてXamarinを使用することに決定した。
+        Xamarinではプラットフォーム依存の部分以外のコードをC\#で記述することができ、Xamarin.Formsを用いれば、UI部分もXamlを用いて共通化を図れるメリットがある。
+        また製作者がC\#に慣れていることからもXamarinをを使用することにした。
         
+        ライブラリについて、\\
+        PCLStorageはファイルの入出力を行う際に、共通のコードで記述できるという利点から使用することにした。?
+        Akavacheはデータベースの問い合わせを簡単に行えることから使用することにした。
+        Json.NetはC\#においてJsonを扱うため使用することにした。
+        OxyPlotは家計簿を実装するにあたってグラフの描画をする必要があるため、使用することにした。
+    
 \end{document}
