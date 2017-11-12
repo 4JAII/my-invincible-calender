@@ -1,4 +1,4 @@
-﻿\documentclass[a4j]{jarticle}
+\documentclass[a4j]{jarticle}
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{subfig}
 
@@ -16,9 +16,29 @@
 \subsection{完成した機能}
 現在、完成している機能を以下に示す。
 \begin{description}
-	\item[WishListのModel] \mbox{} \\
-		WishListのModel \\
-		WishListのModel
+	\item[WishListのメイン画面] \mbox{} \\
+		\begin{itemize}
+        	\item[1. Model] \ \\
+            WishListのModelは主に欲しいもののデータ(ID,名前,値段,予定日,購入状況)のリスト、リストのソートなどを含む編集機能のロジックを実装した
+            \item[2. ViewModel]\ \\
+            WishListのViewModelはReactivePropertyを用いることで簡潔なViewとModelの仲介を実装することができた。ViewModelではページ遷移時の処理、昇順降順変更による再ソート呼び出し、ソート方法の変更による再ソート呼び出しなどを実装した
+            \item[3. View] \ \\
+            WishListのViewは主にXamarinの１つの機能であるListViewを用いて実装を行った。また昇順降順ボタン,ソート方法を変更できるPickerも実装した。
+        \end{itemize}
+        以下にAndroid、UWPでのWishListの画面を示す。
+        \begin{figure}[h]
+			\centering
+ 			\includegraphics[width=80mm]{figures/WishListMainAndroid.jpg} %パスをかえる
+ 			\caption{Androidの環境でWishListを表示したときの画面図}
+ 			\label{WishListMainFig1} %Nの部分をかえる
+		\end{figure}
+        \begin{figure}[h]
+			\centering
+ 			\includegraphics[width=80mm]{figures/WishListMainUWP.png} %パスをかえる
+ 			\caption{UWPの環境でWishListを表示したときの画面図}
+ 			\label{WishListMainFig2} %Nの部分をかえる
+		\end{figure}
+        \clearpage
 	\item[Menu] \mbox{} \\
     	図\ref{MenuFig1}にAndroidの環境でmenuを表示したときの画面示す。
 		画面左端からのスワイプで表示されるMenuをMasterDetailPageを使うことで実装した。
